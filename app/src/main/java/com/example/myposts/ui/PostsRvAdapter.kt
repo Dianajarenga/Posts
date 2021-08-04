@@ -10,17 +10,12 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myposts.R
 import com.example.myposts.models.Posts
-
-
-
 class PostsRvAdapter(var context:Context,  var postList:List<Posts>):RecyclerView.Adapter<ViewHolderPost>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderPost {
-       var itemView=LayoutInflater.from(parent.context).inflate(R.layout.activity_view_post,parent,false)
+       var itemView=LayoutInflater.from(parent.context).inflate(R.layout.postitems,parent,false)
         return ViewHolderPost(itemView)
         //create view holder 2nd
     }
-
-
 
     override fun onBindViewHolder(holder: ViewHolderPost, position: Int) {
         var  currentPost= postList[position]
@@ -40,7 +35,7 @@ class PostsRvAdapter(var context:Context,  var postList:List<Posts>):RecyclerVie
 
     override fun getItemCount(): Int {
        return postList.size
-        //first
+
     }
 }
 class ViewHolderPost(itemView:View):RecyclerView.ViewHolder(itemView){
